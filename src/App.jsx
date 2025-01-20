@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/navBar/NavBar';
-import Body from './components/body/Body';
+import Body from './views/home/Body';
 import back1 from './assets/back1.jpg';
 
 function App() {
