@@ -5,6 +5,9 @@ import PackageOffer from '../../components/home/PackageOffer';
 import services from '../../assets/services.webp';
 import Service from '../../components/home/Service';
 import { HiArrowUpCircle } from "react-icons/hi2";
+import WhyChoseUs from '../../components/home/WhyChoseUs';
+import HowItWork from '../../components/home/HowItWork';
+import FeedBack from '../../components/home/FeedBack';
 
 
 const Body = () => {
@@ -132,18 +135,25 @@ const Body = () => {
                 <Service/>
               </div>
             </div>
-            <div className=' group flex items-center justify-center'>
-              <button className='bg-blue-600 rounded-[40px] p-6 text-white '>
+            <div className='relative group hidden sm:block mt-5'>
+              <button className='bg-blue-600 rounded-[40px] p-6 text-white flex items-center justify-between'>
                 Activate Your IPTV Plane
+                <HiArrowUpCircle
+                  className='text-white text-3xl ml-3 '
+                />
               </button>
-              <HiArrowUpCircle
-                className='text-white mr-5'
-              />
             </div>
           </div>
-
         </div>
 
+        {/*Why Chose Us*/}
+        <WhyChoseUs/>
+
+        {/*How it work*/}
+        <HowItWork/>
+
+        {/*FeerBack*/}
+        {<FeedBack/>}
       </div>
 
     </div>
