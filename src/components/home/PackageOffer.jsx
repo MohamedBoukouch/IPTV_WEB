@@ -18,7 +18,7 @@ const offersText = ({ text, isVip }) => {
 
 const PackageOffer = ({ nbr_month, plan, prix, isVip }) => {
   return (
-    <div className={`${isVip === 0 ? 'bg-white pt-11 pb-10' : 'bg-blue-600 text-white'} rounded-[20px] mr-5 pr-10 pl-10 mb-8
+    <div className={`${isVip === 0 ? 'bg-white pt-11 pb-10' : 'bg-blue-600 text-white'} rounded-[20px]  pr-10 pl-10
     w-full flex flex-col gap-5 justify-center items-center pb-5 pt-5 font-titel`}>
       
       {/* Conditional rendering for "Most Popular" based on isVip */}

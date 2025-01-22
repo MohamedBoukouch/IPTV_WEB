@@ -11,12 +11,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="text-xl py-7">
+    <div className="text-xl py-7 sm:pl-15">
       {/* Upper NavBar */}
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center ">
         {/* Logo */}
         <a href="#">
-          <img src={logo} alt="Logo" className="w-52 sm:w-40 md:w-48" />
+          <img src={logo} alt="Logo" className="w-52 sm:w-40" />
         </a>
 
         {/* Menu button for small screens */}

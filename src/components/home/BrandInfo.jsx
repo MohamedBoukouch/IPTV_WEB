@@ -3,41 +3,41 @@ import ranking from '../../assets/ranking.png';
 
 const BrandInfo = () => {
   return (
-    <div className=''>
-    <div className='bg-white flex text-black py-16 px-16 rounded-[20px] justify-center items-center space-x-10'>
-      <div className='flex-col '>
-        <h1 className='text-4xl'>
-        WorldWide Channels
-        </h1>
-        <p>
-        Watch US, UK, CA, and international channels.
-        </p>
+    <div>
+      {/* Main Container */}
+      <div className="bg-white flex flex-col sm:flex-row text-black py-10 sm:py-16 px-6 sm:px-10 rounded-[20px] justify-center items-start space-y-10 sm:space-y-0 sm:space-x-10">
+        {/* Section 1 */}
+        <div className="flex flex-col ">
+          <h1 className="text-2xl sm:text-3xl ">WorldWide Channels</h1>
+          <p className="text-base sm:text-lg mt-2">
+            Watch US, UK, CA, and international channels.
+          </p>
+        </div>
+        {/* Divider */}
+        <div className="hidden sm:block w-1 h-20 bg-black"></div>
+        {/* Section 2 */}
+        <div className="flex flex-col">
+          <h1 className="text-2xl sm:text-3xl ">On-Demand VOD</h1>
+          <p className="text-base sm:text-lg mt-2">
+            Enjoy a limitless selection of updated movies and series.
+          </p>
+        </div>
+        {/* Divider */}
+        <div className="hidden sm:block w-1 h-20 bg-black"></div>
+        {/* Section 3 */}
+        <div className="flex flex-col">
+          <h1 className="text-2xl sm:text-3xl ">High Quality Video</h1>
+          <p className="text-base sm:text-lg mt-2">
+            Stream in HD, Full HD, and 4K on all your devices without freezing.
+          </p>
+        </div>
       </div>
-      <div className='w-2 h-70 bg-black'></div>
-      <div>
-      <h1 className='text-4xl'>
-        On-Demand VOD
-        </h1>
-        <p>
-        Enjoy a limitless selection of updated movies and series.
-        </p>
+      {/* Ranking Image */}
+      <div className="flex justify-center mt-8">
+        <img alt="ranking" src={ranking} className="w-78 sm:w66" />
       </div>
-      <div className='w-1 h-70 bg-black'></div>
-      <div>
-      <h1 className='text-4xl'>
-        High Quality Video
-        </h1>
-        <p>
-        Stream in HD, Full HD, and 4K on all your devices without freezing. 
-        </p>
-      </div>
-      
-    </div >
-    <div className='flex justify-center mt-4'>
-        <img alt='ranking' src={ranking} className='' />
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default BrandInfo
+export default BrandInfo;
