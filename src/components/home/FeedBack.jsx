@@ -23,9 +23,9 @@ const FeedBack = () => {
   }, []);
 
   return (
-    <div className='mt-40 pr-4'>
+    <div className='mt-40 pr-4 pb-10'>
       <div 
-        className='relative bg-cover bg-center h-screen' 
+        className='relative bg-cover bg-center h-screen*2' 
         style={{ backgroundImage: `url(${back2})` }}
       >
         <div className="absolute inset-0 bg-black opacity-90"></div>
@@ -56,6 +56,20 @@ const FeedBack = () => {
               </div>
             </div>
           </div>
+
+          <div className='flex flex-col items-center justify-center gap-8 text-2xl pb-10'>
+            <div className='relative group hidden sm:block mt-5'>
+              <button className='bg-blue-600 rounded-[40px] p-6 text-white flex items-center justify-between'>
+                Last Chance: Get 70% OFF
+              </button>
+            </div>
+            <div>
+              <h1 className='text-white '>
+              ONE TIME PAYMENT - Endless Entertainment!
+              </h1>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

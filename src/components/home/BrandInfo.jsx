@@ -3,7 +3,7 @@ import ranking from '../../assets/ranking.png';
 
 const BrandInfo = () => {
   return (
-    <div>
+    <div className=''>
     <div className='bg-white flex text-black py-16 px-16 rounded-[20px] justify-center items-center space-x-10'>
       <div className='flex-col '>
         <h1 className='text-4xl'>

@@ -7,22 +7,14 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily:{
-        titel:["Oswald","sans-serif"], 
+      fontFamily: {
+        titel: ["Oswald", "sans-serif"], // Exemple de police personnalisée
       },
       colors: {
-        primary: "#ff8033",
-        secondary: "#050505",
+        primary: "#ff8033", // Couleur principale
+        secondary: "#050505", // Couleur secondaire
       },
-      container: {
-        center: true,
-        padding:{
-          DEFAULT: "1rem",
-          sm: "2rem",
-        }
-      }
     },
   },
   plugins: [],
 }
-

@@ -8,15 +8,16 @@ import { HiArrowUpCircle } from "react-icons/hi2";
 import WhyChoseUs from '../../components/home/WhyChoseUs';
 import HowItWork from '../../components/home/HowItWork';
 import FeedBack from '../../components/home/FeedBack';
+import Question from '../../components/home/Question';
 
 
 const Body = () => {
   return (
-    <div className="relative h-screen font-titel py-28 ">
+    <div className=" font-titel ">
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-white gap-8">
+      <div className="relative z-10 flex flex-col justify-center items-center text-white gap-8 mt-32">
         <div className="text-center max-w-2xl">
-          <h1 className="text-7xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-[20px]">
+          <h1 className="text-[20px] sm:text-9xl md:text-7xl lg:text-7xl font-bold mb-4">
             The Best IPTV 
             <div className='flex gap-5'>
               <div>Subscription</div>
@@ -54,10 +55,10 @@ const Body = () => {
       </div>
 
       {/* Black Background After Image */}
-      <div className=" bg-black py-8 ">
+      <div className=" bg-black py-8 pb-10 mt-32 ">
         <BrandInfo/>
         <div className='text-white flex flex-col items-center justify-center py-3 mt-8 gap-6'>
-          <div className='flex text-4xl font-bold gap-3'>
+          <div className='flex text-4 xl font-bold gap-3'>
             <h1 className='mt-3'>
               Choose the Plan That Suits For 
             </h1>
@@ -154,8 +155,11 @@ const Body = () => {
 
         {/*FeerBack*/}
         {<FeedBack/>}
-      </div>
 
+        {/*Questions*/}
+        <Question/>
+      </div>
+    
     </div>
   );
 };

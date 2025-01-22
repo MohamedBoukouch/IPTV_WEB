@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/navBar/NavBar';
 import Body from './views/home/Body';
 import back1 from './assets/back1.jpg';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-100" />
       <Navbar />
       <Body />
+      <Footer/>
     </div>
   );
 }
