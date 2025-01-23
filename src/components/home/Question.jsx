@@ -15,7 +15,7 @@ const Container = ({ question,reponse }) => {
   return (
     <div className='flex flex-col '>
         <div 
-        className={`${bgColor} ${textColor} font-titel font-bold text-xl p-6 ${isExpanded?'rounded-tl-[20px] rounded-tr-[20px]':'rounded-[20px]'} m-3 flex justify-between cursor-pointer`} 
+        className={`${bgColor} ${textColor} font-titel font-bold text-xl p-6 ${isExpanded?'rounded-tl-[10px]  rounded-tr-[10px] sm:rounded-tl-[20px] sm:rounded-tr-[20px]':'rounded-[10px] sm:rounded-[20px]'} m-3 flex justify-between cursor-pointer`} 
         onClick={handleClick}
         >
         {question}
@@ -36,16 +36,16 @@ const Container = ({ question,reponse }) => {
 
 const Question = () => {
   return (
-    <div className='mr-10'>
-      <div className='ml-36 flex items-start justify-start gap-3 mt-10 text-blue-600'>
+    <div className='mr-0'>
+      <div className='ml-5 sm:ml-36 flex items-start justify-start gap-3 mt-10 text-blue-600'>
         <div className='text-xl'>QUESTIONS / ANSWERS</div>
         <div className='bg-blue-600 w-20 h-0.5 mt-4'></div>
       </div>
-      <div className='flex items-center justify-center text-white text-5xl font-bold gap-3 pt-16'>
+      <div className='flex flex-col sm:flex-row items-center justify-center text-white text-5xl font-bold gap-3 pt-16'>
         <h1>Frequently Asked</h1>
         <h1 className='bg-blue-600 p-3 rounded-[15px]'>Questions</h1>
       </div>
-      <div className='mr-48 ml-48 mt-16'>
+      <div className=' sm:mr-48 sm:ml-48 mt-16'>
             {Container({
                 question:"Are there any additional fees?",
                 reponse:"All prices are included in your subscription, with no hidden fees."

@@ -6,8 +6,8 @@ import like from '../../assets/like.png';
 
 const container=({image,titel,text})=>{
     return (
-        <div className='flex flex-col items-center justify-center text-white text-xl gap-4 w-1/3 mr-5 ml-5'>
-            <img alt='img' src={image} className='w-56'/>
+        <div className='flex flex-col items-center justify-center text-white text-xl gap-4 w-full mr-5 ml-5'>
+            <img alt='img' src={image} className='w-40 sm:w-56'/>
             <h1 className='text-blue-600 text-3xl'>
             {titel}
             </h1>
@@ -19,7 +19,7 @@ const container=({image,titel,text})=>{
 }
 const HowItWork = () => {
   return (
-    <div className=' mt-36 gap-20'>
+    <div className=' mt-10 sm:mt-36 gap-10'>
       <div className='flex items-center justify-center text-white text-5xl font-bold gap-3'>
         <h1>How</h1>
         <h1 className='bg-blue-600 p-3 rounded-[15px]'>It Works</h1>
@@ -31,7 +31,7 @@ const HowItWork = () => {
         <div className='bg-blue-600 w-16 h-0.5'></div>
       </div>
 
-      <div className='flex items-center justify-center mr-10 ml-10 mt-40 gap-5 '>
+      <div className='flex flex-col sm:flex-row items-center justify-center mr-10 ml-10 mt-40 gap-5 '>
         {container({
             image:book,
             titel:"Choose Your Subscription",

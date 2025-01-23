@@ -134,11 +134,11 @@ const Body = () => {
               </div>
             </div>
             <div className='relative group mt-5'>
-  <button className='bg-blue-600 rounded-[20px] sm:rounded-[40px] p-2 sm:p-3 text-white text-sm sm:text-base flex items-center justify-between'>
-    Activate Your IPTV Plan
-    <HiArrowUpCircle className='text-white text-2xl sm:text-3xl ml-2 sm:ml-3' />
-  </button>
-</div>
+              <button className='bg-blue-600 rounded-[20px] sm:rounded-[40px] p-2 sm:p-3 text-white text-sm sm:text-base flex items-center justify-between'>
+                Activate Your IPTV Plan
+                <HiArrowUpCircle className='text-white text-2xl sm:text-3xl ml-2 sm:ml-3' />
+              </button>
+            </div>
 
 
         </div>
