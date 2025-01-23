@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import logo from '../../assets/logo.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; //Import NavLink
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log("Name");
   };
 
   return (
@@ -15,9 +17,9 @@ const Navbar = () => {
       {/* Upper NavBar */}
       <div className="container mx-auto flex justify-between items-center ">
         {/* Logo */}
-        <a href="#">
+        <Link to="/"> {/* Changed to Link for correct navigation */}
           <img src={logo} alt="Logo" className="w-52 sm:w-40" />
-        </a>
+        </Link>
 
         {/* Menu button for small screens */}
         <div className="sm:hidden ">
@@ -27,13 +29,14 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden sm:flex items-center space-x-5 md:space-x-8 lg:space-x-10 font-bold text-white">
-          <a href="#" className="hover:text-gray-300 text-blue-600">IPTV Subscription</a>
-          <a href="#" className="hover:text-gray-300">Plan & Prices</a>
-          <a href="#" className="hover:text-gray-300">FAQ</a>
-          <a href="#" className="hover:text-gray-300">Tutorial</a>
-          <a href="#" className="hover:text-gray-300">Blog</a>
-          <a href="#" className="hover:text-gray-300">Contact us</a>
+         <div className="hidden sm:flex items-center space-x-5 md:space-x-8 lg:space-x-10 font-bold text-white">
+             {/* Use NavLink instead of 'a' for proper styling on hover and on selection */}
+            <NavLink to="/iptv-subscription" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >IPTV Subscription</NavLink>
+            <NavLink to="/plan-prices" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Plan & Prices</NavLink>
+            <NavLink to="/faq" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >FAQ</NavLink>
+            <NavLink to="/tutorial" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Tutorial</NavLink>
+            <NavLink to="/contact-us" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Blog</NavLink>
+          <Link to="/contact-us" className="hover:text-orange-500">Contact us</Link>
         </div>
 
         {/* Get Started Button */}
@@ -47,17 +50,17 @@ const Navbar = () => {
       {/* Dropdown Menu for Small Screens */}
       {isMenuOpen && (
         <div className="bg-white pt-6 pb-6 flex flex-col w-full text-start">
-          <div className="p-2 text-blue-600">IPTV Subscription</div>
+            <Link to="/iptv-subscription" className="p-2 text-blue-600">IPTV Subscription</Link>
           <hr className="border-gray-300 my-0" />
-          <div className="p-2">Plan & Prices</div>
+            <Link to="/plan-prices" className="p-2">Plan & Prices</Link>
           <hr className="border-gray-300 my-0" />
-          <div className="p-2">FAQ</div>
+           <Link to="/faq" className="p-2">FAQ</Link>
           <hr className="border-gray-300 my-0" />
-          <div className="p-2">Tutorial</div>
+          <Link to="/tutorial" className="p-2">Tutorial</Link>
           <hr className="border-gray-300 my-0" />
-          <div className="p-2">Blog</div>
+          <Link to="/blog" className="p-2">Blog</Link>
           <hr className="border-gray-300 my-0" />
-          <div className="p-2">Contact us</div>
+            <Link to="/contact-us" className="p-2">Contact us</Link>
         </div>
       )}
     </div>

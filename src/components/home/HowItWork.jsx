@@ -31,7 +31,7 @@ const HowItWork = () => {
         <div className='bg-blue-600 w-16 h-0.5'></div>
       </div>
 
-      <div className='flex flex-col sm:flex-row items-center justify-center mr-10 ml-10 mt-40 gap-5 '>
+      <div className='flex flex-col sm:flex-row items-center justify-center mr-10 ml-10 mt-10 gap-5 '>
         {container({
             image:book,
             titel:"Choose Your Subscription",

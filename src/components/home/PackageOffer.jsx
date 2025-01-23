@@ -27,7 +27,7 @@ const PackageOffer = ({ nbr_month, plan, prix, isVip }) => {
           Most Popular
         </h2>
       ) : (
-        <p className='mt-5'></p> // Empty <p> tag if not VIP
+        <p className='pt-12'></p> // Empty <p> tag if not VIP
       )}
 
       <h1 className='text-3xl font-bold'>

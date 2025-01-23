@@ -7,7 +7,7 @@ import feedback4 from '../../assets/feedbacks/feedback4.webp';
 import feedback5 from '../../assets/feedbacks/feedback5.webp';
 import feedback6 from '../../assets/feedbacks/feedback6.webp';
 
-const FeedBack = () => {
+const FeedBack = ({with_back}) => {
   const images = [feedback1, feedback2, feedback3, feedback4, feedback5, feedback6];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -23,11 +23,13 @@ const FeedBack = () => {
   }, []);
 
   return (
-    <div className=' mt-20 ms:mt-40 pr-4 pb-10'>
+    <div className=' mt-20 ms:mt-10 pr-4 pb-10'>
       <div 
         className='relative bg-cover bg-center h-screen*2' 
-        style={{ backgroundImage: `url(${back2})` }}
-      >
+        style={{
+          backgroundImage: with_back ? `url(${back2})` : undefined,
+          backgroundColor: with_back ? undefined : 'black',
+        }}      >
         <div className="absolute inset-0 bg-black opacity-90"></div>
         
         <div className='relative z-10'>

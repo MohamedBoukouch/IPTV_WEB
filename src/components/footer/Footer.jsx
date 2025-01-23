@@ -9,14 +9,14 @@ import { GoChevronRight } from "react-icons/go";
 
 const Footer = () => {
   return (
-    <div className='mb-6 '>
+    <div className=''>
         <div 
             className='relative bg-cover bg-center w-full' 
             style={{ backgroundImage: `url(${back3})` }}
         >
             <div className="absolute inset-0 bg-black opacity-90"></div>
 
-            <div className='relative z-10 flex flex-col  pt-5 pr-5 pl-5 sm:pr-40 sm:pl-40 gap-5 mr text-[12px] sm:text-xl'>
+            <div className='relative z-10 flex flex-col  pt-5 pr-5 pl-5 sm:pr-20 sm:pl-20 gap-5 mr text-[12px] sm:text-xl'>
               <div className='w-full h-0.5 bg-white'></div>
               <div className='flex  flex-col sm:flex-row justify-between '>
                 <div className='flex flex-col items-center sm:items-start  justify-between '>

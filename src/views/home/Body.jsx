@@ -150,7 +150,7 @@ const Body = () => {
         <HowItWork/>
 
         {/*FeerBack*/}
-        {<FeedBack/>}
+        <FeedBack with_back={true} />
 
         {/*Questions*/}
         <Question/>

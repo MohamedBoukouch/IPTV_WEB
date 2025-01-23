@@ -1,10 +1,32 @@
 import React from 'react';
-import Navbar from './components/navBar/NavBar';
-import Body from './views/home/Body';
-import back1 from './assets/back1.jpg';
-import Footer from './components/footer/Footer';
+import Home from './views/home/HomeView';
+import ContactUs from './views/contact_us/ContactUs';
+import Prices from './views/prices/Prices';
+import Tutrial from './views/tutrial/Tutrial';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/prices" element={<Prices />} />
+        <Route path="/tutrial" element={<Tutrial />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+{/*function App() {
   return (
     <div 
       className="relative h-screen bg-cover bg-center"
@@ -18,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/}
