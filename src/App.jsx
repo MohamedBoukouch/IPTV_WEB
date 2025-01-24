@@ -3,6 +3,8 @@ import Home from './views/home/HomeView';
 import ContactUs from './views/contact_us/ContactUs';
 import Prices from './views/prices/Prices';
 import Tutrial from './views/tutrial/Tutrial';
+import Faq from './views/faq/Faq';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -14,6 +16,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/prices" element={<Prices />} />
         <Route path="/tutrial" element={<Tutrial />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
     </Router>
   );

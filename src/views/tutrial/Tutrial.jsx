@@ -17,7 +17,7 @@ const Tutrial = () => {
           >
             <div className="absolute inset-0 bg-black opacity-90 z-10"><Navbar /></div> 
             
-            <div className='flex justify-center items-center p-44'>
+            <div className='flex justify-center items-center p-56'>
               <div className="rounded-[10px] text-white p-3 text-center font-bold text-7xl font-titel w-fit relative z-20">
                 Installation Tutorial
               </div>

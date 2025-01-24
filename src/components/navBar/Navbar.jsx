@@ -32,10 +32,9 @@ const Navbar = () => {
          <div className="hidden sm:flex items-center space-x-5 md:space-x-8 lg:space-x-10 font-bold text-white">
              {/* Use NavLink instead of 'a' for proper styling on hover and on selection */}
             <NavLink to="/iptv-subscription" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >IPTV Subscription</NavLink>
-            <NavLink to="/plan-prices" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Plan & Prices</NavLink>
+            <NavLink to="/prices" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Plan & Prices</NavLink>
             <NavLink to="/faq" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >FAQ</NavLink>
             <NavLink to="/tutorial" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Tutorial</NavLink>
-            <NavLink to="/contact-us" className={({ isActive }) => `hover:text-gray-300 ${isActive ? 'text-blue-600' : ''}`} >Blog</NavLink>
           <Link to="/contact-us" className="hover:text-orange-500">Contact us</Link>
         </div>
 
@@ -52,13 +51,11 @@ const Navbar = () => {
         <div className="bg-white pt-6 pb-6 flex flex-col w-full text-start">
             <Link to="/iptv-subscription" className="p-2 text-blue-600">IPTV Subscription</Link>
           <hr className="border-gray-300 my-0" />
-            <Link to="/plan-prices" className="p-2">Plan & Prices</Link>
+            <Link to="/prices" className="p-2">Plan & Prices</Link>
           <hr className="border-gray-300 my-0" />
            <Link to="/faq" className="p-2">FAQ</Link>
           <hr className="border-gray-300 my-0" />
           <Link to="/tutorial" className="p-2">Tutorial</Link>
-          <hr className="border-gray-300 my-0" />
-          <Link to="/blog" className="p-2">Blog</Link>
           <hr className="border-gray-300 my-0" />
             <Link to="/contact-us" className="p-2">Contact us</Link>
         </div>
