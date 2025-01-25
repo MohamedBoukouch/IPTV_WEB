@@ -1,9 +1,10 @@
 import React from 'react';
 import { VscPassFilled } from "react-icons/vsc";
 import payments from '../../assets/payments.png';
+import { useNavigate } from "react-router-dom";
 
 // Fonction pour créer un élément stylisé
-const offersText = ({ text, isVip }) => {
+const offersText = ({ text, isVip,titel }) => {
   return (
     <div className='flex w-full justify-start items-start gap-3'>
       <div>
@@ -16,7 +17,16 @@ const offersText = ({ text, isVip }) => {
   );
 };
 
-const PackageOffer = ({ nbr_month, plan, prix, isVip }) => {
+const PackageOffer = ({ nbr_month, plan, prix, isVip,titel }) => {
+
+  
+  const navigate = useNavigate();
+
+  // Function to handle navigation with parameters
+  const handleClick = (titel, prix) => {
+    navigate("/buy-product", { state: { title: titel, prix: prix } });
+  };
+
   return (
     <div className={`${isVip === 0 ? 'bg-white pt-11 pb-10' : 'bg-blue-600 text-white'} rounded-[20px]  pr-10 pl-10
     w-full flex flex-col gap-5 justify-center items-center pb-5 pt-5 font-titel`}>
@@ -42,7 +52,9 @@ const PackageOffer = ({ nbr_month, plan, prix, isVip }) => {
       <h3 className='text-2xl'>
         FAST & STABLE
       </h3>
-      <button className={`rounded-[10px] pt-5 pb-5 pl-5 pr-5 mb-6 w-full ${isVip === 0 ? 'text-white bg-blue-600' : 'text-blue-600 bg-white'}`}>
+      <button 
+      onClick={handleClick({titel:{titel},prix:{prix}})}
+      className={`rounded-[10px] pt-5 pb-5 pl-5 pr-5 mb-6 w-full ${isVip === 0 ? 'text-white bg-blue-600' : 'text-blue-600 bg-white'} hover:bg-blue-900`}>
         BUY NOW
       </button>
       

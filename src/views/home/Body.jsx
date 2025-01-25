@@ -12,6 +12,8 @@ import Question from '../../components/home/Question';
 
 
 const Body = () => {
+
+
   return (
     <div className=" font-titel ">
       {/* Content */}
@@ -72,10 +74,34 @@ const Body = () => {
         </div>
         {/* Les offers packages*/}
         <div className='flex flex-col sm:flex-row items-center justify-center mr-6 ml-6 mt-5 mb-9 gap-3'>
-          <PackageOffer nbr_month={1} plan={"Basic Plan"} prix={12.99} isVip={0}/>
-          <PackageOffer nbr_month={3} plan={"Basic Plan"} prix={39.99} isVip={0}/>
-          <PackageOffer nbr_month={6} plan={"Basic Plan"} prix={49.99} isVip={0}/>
-          <PackageOffer nbr_month={12} plan={"Basic Plan"} prix={69.99} isVip={1}/>
+          <PackageOffer 
+          nbr_month={1} 
+          plan={"Basic Plan"} 
+          prix={12.99} 
+          isVip={0} 
+          titel={"Premium IPTV – 1 Month Subscription"}
+          />
+          <PackageOffer 
+          nbr_month={3} 
+          plan={"Basic Plan"} 
+          prix={39.99} 
+          isVip={0}
+          titel={"Premium IPTV – 1 Month Subscription"}
+          />
+          <PackageOffer 
+          nbr_month={6} 
+          plan={"Basic Plan"} 
+          prix={49.99} 
+          isVip={0}
+          titel={"Premium IPTV – 1 Month Subscription"}
+          />
+          <PackageOffer 
+          nbr_month={12} 
+          plan={"Basic Plan"} 
+          prix={69.99} 
+          isVip={1}
+          titel={"Premium IPTV – 1 Month Subscription"}
+          />
         </div>
         {/*Need Custom */}
         <div className='flex  flex-col sm:flex-row items-center justify-center gap-8'>

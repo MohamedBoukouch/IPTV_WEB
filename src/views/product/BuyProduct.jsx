@@ -5,13 +5,20 @@ import { FaCheckCircle } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import image1 from '../../assets/services.webp';
 import image2 from '../../assets/devices.png';
+import packImage from '../../assets/pack.webp';
 import Streaming_Channels from '../../assets/Streaming-Channels.jpg';
 import Channels_popular from '../../assets/Channels-popular.jpg';
 import Devices_2 from '../../assets/Devices_2.webp';
 import { HiArrowUpCircle } from "react-icons/hi2";
+import { useLocation } from 'react-router-dom';
+
 
 
 const BuyProduct = () => {
+
+  const location = useLocation();
+  const { titel, prix } = location.state || {};
+
     return (
         <div className="bg-black text-white flex flex-col min-h-screen ">
             <Navbar />
@@ -23,13 +30,13 @@ const BuyProduct = () => {
                             <p>/</p>
                             <p className="text-blue-600">Price & Plans</p>
                             <p>/</p>
-                            <p>Premium IPTV – 1 Month Subscription</p>
+                            <p>{titel}</p>
                         </div>
                         <div className="text-xl font-bold">
-                            Premium IPTV – 1 Month Subscription
+                            {titel}
                         </div>
                         <div className="text-blue-600 text-xl font-bold">
-                            $12.99
+                            {prix}
                         </div>
                         <div className="flex gap-4">
                             <div className="bg-white text-black pr-6 pl-6 pt-2 pb-2 rounded-[5%]"><input type='number' className='w-8' defaultValue={1}/></div>
@@ -167,6 +174,79 @@ const BuyProduct = () => {
                 className='text-blue-600 text-xl'
                 />
               </button>
+              </div>
+              <div className='border-2 border-blue-700 flex flex-row gap-4 p-5 rounded-lg justify-center items-center'>
+                  <p className='w-full text-center font-bold text-4xl'>
+                  Need custom services?
+                  </p>
+                  <div className='flex flex-col gap-3 w-full '>
+                      <input 
+                      type='email'
+                      placeholder='Your email address...'
+                      className='pt-3 pb-3 sm:pt-5 sm:pb-5 pr-4 pl-4 rounded-[8px]'
+                      />
+                      <button className='bg-blue-800 pt-3 pb-3 sm:pt-5 sm:pb-5 pr-4 pl-4 rounded-[8px] text-white '>
+                        SUBSCRIBE NOW
+                      </button>
+                  </div>
+              </div>
+              {/*Les Packes*/}
+              <div className='flex flex-col'>
+                  <p className='text-2xl'>Related products</p>
+                  <div className='flex gap-4 '>
+                      {/*1*/}
+                      <div className='flex flex-col w-1/4 items-center justify-center '>
+                          <img alt='Image Pack' src={packImage} />
+                          <p className='font-bold text-xl text-center'>
+                          12 Months Subscription – 4 Connections
+                          </p>
+                          <p className='text-blue-600 font-bold text-xl'>
+                          $159.99
+                          </p>
+                          <button className='bg-blue-600 p-5 rounded-md w-full'>
+                          Order Now
+                          </button>
+                      </div>
+                      {/*2*/}
+                      <div className='flex flex-col w-1/4 items-center justify-center '>
+                          <img alt='Image Pack' src={packImage} />
+                          <p className='font-bold text-xl text-center'>
+                          12 Months Subscription – 2 Connections
+                          </p>
+                          <p className='text-blue-600 font-bold text-xl'>
+                          $97.99
+                          </p>
+                          <button className='bg-blue-600 p-5 rounded-md w-full'>
+                          Order Now
+                          </button>
+                      </div>
+                      {/*3*/}
+                      <div className='flex flex-col w-1/4 items-center justify-center '>
+                          <img alt='Image Pack' src={packImage} />
+                          <p className='font-bold text-xl text-center'>
+                            Luxury Plan – 12 Months Subscription
+                          </p>
+                          <p className='text-blue-600 font-bold text-xl'>
+                          $69.99
+                          </p>
+                          <button className='bg-blue-600 p-5 rounded-md w-full'>
+                          Order Now
+                          </button>
+                      </div>
+                      {/*4*/}
+                      <div className='flex flex-col w-1/4 items-center justify-center '>
+                          <img alt='Image Pack' src={packImage} />
+                          <p className='font-bold text-xl text-center'>
+                          Premium IPTV – 3 Months Subscription
+                          </p>
+                          <p className='text-blue-600 font-bold text-xl'>
+                          $39.99
+                          </p>
+                          <button className='bg-blue-600 p-5 rounded-md w-full w-50'>
+                          Order Now
+                          </button>
+                      </div>
+                  </div>
               </div>
             </div>
             </div>
