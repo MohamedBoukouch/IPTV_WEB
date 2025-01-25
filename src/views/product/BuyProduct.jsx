@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Navbar from '../../components/navBar/Navbar';
 import Footer from '../../components/footer/Footer';
 import { FaCheckCircle } from "react-icons/fa";
@@ -11,11 +11,55 @@ import Channels_popular from '../../assets/Channels-popular.jpg';
 import Devices_2 from '../../assets/Devices_2.webp';
 import { HiArrowUpCircle } from "react-icons/hi2";
 import { useLocation } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import { FaCheck } from "react-icons/fa6";
 
 
 const BuyProduct = () => {
+   
+  const [clickedContainer, setClickedContainer] = useState(null);
 
+  const navigate = useNavigate();
+  const handleClick = ({ titel, prix }) => {
+    setOrders(prevOrders => [...prevOrders, order]);
+    navigate("/buy-product", { state: { titel, prix } });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleViewCartClick = () => {
+    // Navigate to checkout page and pass the orders list via state
+    navigate('/checkout', { state: { orders } });
+  };
+
+
+  const container=({titel,prix},index)=>{
+    return (
+      <div key={index} className='flex flex-col w-1/4 items-center justify-center  gap-2 cursor-pointer' >
+        <img onClick={()=>handleClick({titel,prix})} alt='Image Pack' src={packImage} />
+        <p className='font-bold text-xl text-center'>
+        {titel}
+        </p>
+        <p className='text-blue-600 font-bold text-xl'>
+        {prix}
+        </p>
+        <div className='flex flex-row items-center justify-center gap-3'>
+        <button className='bg-blue-600 p-3 rounded-md w-full flex gap-3 items-center justify-center'
+          onClick={() => setClickedContainer(index)} >
+          Order Now
+          {clickedContainer === index ? (
+              <FaCheck className='text-white text-2xl' />
+          ) : null}
+        </button>
+        <div>
+          {clickedContainer === index ? (
+            <p className='text-[15px] text-center text-blue-600' onClick={()=>handleViewCartClick()}>View.cart</p>
+          ) : null}
+        </div>
+        </div>
+      </div>
+    );
+  }
+  
   const location = useLocation();
   const { titel, prix } = location.state || {};
 
@@ -30,13 +74,13 @@ const BuyProduct = () => {
                             <p>/</p>
                             <p className="text-blue-600">Price & Plans</p>
                             <p>/</p>
-                            <p>{titel}</p>
+                            <p>{titel || "Product Title"}</p>
                         </div>
                         <div className="text-xl font-bold">
-                            {titel}
+                            {titel || "Product Title"}
                         </div>
                         <div className="text-blue-600 text-xl font-bold">
-                            {prix}
+                            {prix || "Product Price" }
                         </div>
                         <div className="flex gap-4">
                             <div className="bg-white text-black pr-6 pl-6 pt-2 pb-2 rounded-[5%]"><input type='number' className='w-8' defaultValue={1}/></div>
@@ -101,12 +145,12 @@ const BuyProduct = () => {
                   GET YOUR PREMIUM IPTV
                 </button>
             </div>
-            <div className='flex flex-col pr-24 pl-24'>
+            <div className='flex flex-col pr-24 pl-24 gap-5 text-xl'>
             <div className='w-full flex flex-col gap-3'>
-              <p className='text-3xl font-bold text-white'>Subscription Details:</p>
+              <p className='text-4xl font-bold text-white'>Subscription Details:</p>
               <div className='bg-blue-600 h-1 w-full'></div>
             </div>
-            <div className='text-start flex flex-col gap-4'>
+            <div className='text-start flex flex-col gap-4 pb-40'>
               <p className='text-3xl font-bold'>
               Unlock a World of Entertainment with Our One Month – IPTV Subscription
               </p>
@@ -191,61 +235,33 @@ const BuyProduct = () => {
                   </div>
               </div>
               {/*Les Packes*/}
-              <div className='flex flex-col'>
+              <div className='flex flex-col items-center justify-center mt-10 gap-5'>
                   <p className='text-2xl'>Related products</p>
                   <div className='flex gap-4 '>
                       {/*1*/}
-                      <div className='flex flex-col w-1/4 items-center justify-center '>
-                          <img alt='Image Pack' src={packImage} />
-                          <p className='font-bold text-xl text-center'>
-                          12 Months Subscription – 4 Connections
-                          </p>
-                          <p className='text-blue-600 font-bold text-xl'>
-                          $159.99
-                          </p>
-                          <button className='bg-blue-600 p-5 rounded-md w-full'>
-                          Order Now
-                          </button>
-                      </div>
+                      {container({
+                        titel:"12 Months Subscription – 4 Connections",
+                        prix:"$159.99",},
+                        1
+                      )}
                       {/*2*/}
-                      <div className='flex flex-col w-1/4 items-center justify-center '>
-                          <img alt='Image Pack' src={packImage} />
-                          <p className='font-bold text-xl text-center'>
-                          12 Months Subscription – 2 Connections
-                          </p>
-                          <p className='text-blue-600 font-bold text-xl'>
-                          $97.99
-                          </p>
-                          <button className='bg-blue-600 p-5 rounded-md w-full'>
-                          Order Now
-                          </button>
-                      </div>
+                      {container({
+                        titel:"12 Months Subscription – 2 Connections",
+                        prix:"$97.99",},
+                        2
+                      )}
                       {/*3*/}
-                      <div className='flex flex-col w-1/4 items-center justify-center '>
-                          <img alt='Image Pack' src={packImage} />
-                          <p className='font-bold text-xl text-center'>
-                            Luxury Plan – 12 Months Subscription
-                          </p>
-                          <p className='text-blue-600 font-bold text-xl'>
-                          $69.99
-                          </p>
-                          <button className='bg-blue-600 p-5 rounded-md w-full'>
-                          Order Now
-                          </button>
-                      </div>
+                      {container({
+                        titel:"Luxury Plan – 12 Months Subscription",
+                        prix:"$69.99",},
+                        3
+                      )}
                       {/*4*/}
-                      <div className='flex flex-col w-1/4 items-center justify-center '>
-                          <img alt='Image Pack' src={packImage} />
-                          <p className='font-bold text-xl text-center'>
-                          Premium IPTV – 3 Months Subscription
-                          </p>
-                          <p className='text-blue-600 font-bold text-xl'>
-                          $39.99
-                          </p>
-                          <button className='bg-blue-600 p-5 rounded-md w-full w-50'>
-                          Order Now
-                          </button>
-                      </div>
+                      {container({
+                        titel:"Premium IPTV – 3 Months Subscription",
+                        prix:"$39.99",},
+                        4
+                      )}
                   </div>
               </div>
             </div>

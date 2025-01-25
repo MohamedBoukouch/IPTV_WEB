@@ -77,30 +77,30 @@ const Body = () => {
           <PackageOffer 
           nbr_month={1} 
           plan={"Basic Plan"} 
-          prix={12.99} 
+          prix={"12.99$"} 
           isVip={0} 
           titel={"Premium IPTV – 1 Month Subscription"}
           />
           <PackageOffer 
           nbr_month={3} 
           plan={"Basic Plan"} 
-          prix={39.99} 
+          prix={"$39.99"} 
           isVip={0}
-          titel={"Premium IPTV – 1 Month Subscription"}
+          titel={"Premium IPTV – 3 Months Subscription"}
           />
           <PackageOffer 
           nbr_month={6} 
           plan={"Basic Plan"} 
-          prix={49.99} 
+          prix={"49.99$"} 
           isVip={0}
-          titel={"Premium IPTV – 1 Month Subscription"}
+          titel={"Premium IPTV – 6 Months Subscription"}
           />
           <PackageOffer 
           nbr_month={12} 
           plan={"Basic Plan"} 
-          prix={69.99} 
+          prix={"69.99$"} 
           isVip={1}
-          titel={"Premium IPTV – 1 Month Subscription"}
+          titel={"Luxury Plan – 12 Months Subscription"}
           />
         </div>
         {/*Need Custom */}

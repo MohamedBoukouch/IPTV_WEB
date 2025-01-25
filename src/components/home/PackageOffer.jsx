@@ -19,12 +19,10 @@ const offersText = ({ text, isVip,titel }) => {
 
 const PackageOffer = ({ nbr_month, plan, prix, isVip,titel }) => {
 
-  
   const navigate = useNavigate();
 
-  // Function to handle navigation with parameters
-  const handleClick = (titel, prix) => {
-    navigate("/buy-product", { state: { title: titel, prix: prix } });
+  const handleClick = ({ titel, prix }) => {
+    navigate("/buy-product", { state: { titel, prix } });
   };
 
   return (
@@ -47,14 +45,17 @@ const PackageOffer = ({ nbr_month, plan, prix, isVip,titel }) => {
         {plan}
       </h2>
       <h1 className={`font-bold text-7xl ${isVip === 0 ? 'text-blue-600' : 'text-white'}`}>
-        {prix}$
+        {prix}
       </h1>
       <h3 className='text-2xl'>
         FAST & STABLE
       </h3>
-      <button 
-      onClick={handleClick({titel:{titel},prix:{prix}})}
-      className={`rounded-[10px] pt-5 pb-5 pl-5 pr-5 mb-6 w-full ${isVip === 0 ? 'text-white bg-blue-600' : 'text-blue-600 bg-white'} hover:bg-blue-900`}>
+      <button
+        onClick={() => handleClick({ titel, prix })}
+        className={`rounded-[10px] pt-5 pb-5 pl-5 pr-5 mb-6 w-full ${
+          isVip === 0 ? 'text-white bg-blue-600' : 'text-blue-600 bg-white'
+        } hover:bg-blue-900`}
+      >
         BUY NOW
       </button>
       

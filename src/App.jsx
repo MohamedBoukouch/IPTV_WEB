@@ -4,8 +4,8 @@ import ContactUs from './views/contact_us/ContactUs';
 import Prices from './views/prices/Prices';
 import Tutrial from './views/tutrial/Tutrial';
 import Faq from './views/faq/Faq';
-import BuyProduct from './views/product/BuyProduct'
-
+import BuyProduct from './views/product/BuyProduct';
+import CheckOut from './views/check-out/CheckOut'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -19,6 +19,7 @@ function App() {
         <Route path="/tutrial" element={<Tutrial />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/buy-product" element={<BuyProduct />} />
+        <Route path="/checkout" element={<CheckOut />} />
       </Routes>
     </Router>
   );
