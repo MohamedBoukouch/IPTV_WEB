@@ -4,6 +4,7 @@ import ContactUs from './views/contact_us/ContactUs';
 import Prices from './views/prices/Prices';
 import Tutrial from './views/tutrial/Tutrial';
 import Faq from './views/faq/Faq';
+import BuyProduct from './views/product/BuyProduct'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/prices" element={<Prices />} />
         <Route path="/tutrial" element={<Tutrial />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/buyproduct" element={<BuyProduct />} />
       </Routes>
     </Router>
   );
